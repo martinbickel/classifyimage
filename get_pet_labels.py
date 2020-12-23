@@ -49,8 +49,9 @@ def get_pet_labels(image_dir):
         low_filename = filename.lower()
         low_filename = low_filename.split(".")[0]
         low_filename_list =  low_filename.split("_")
-
-        for word in filename:
+        pet_label = ""
+        
+        for word in low_filname_list:
             if word.isalpha():
                 pet_label += word + " "
 
