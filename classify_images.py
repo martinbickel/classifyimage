@@ -70,11 +70,17 @@ def classify_images(images_dir, results_dic, model):
         fileroot = images_dir + key
         image_classification = classifier(fileroot, model)
         image_classification = image_classification.lower()
-        classifier_label = image_classification.strip()
+        temp = image_classification.split(',')
+        temp2 = []
+        for item in temp:
+            item = item.strip()
+            temp2.append(item)
+        classifier_label = temp2
         label_match = 0
-        if classifier_label in results_dic[key][0]:
+        if results_dic[key][0].strip() in classifier_label:
             label_match = 1
         else:
             label_match = 0
-        results_dic[key].extend([classifier_label, label_match])
+        print("{} und {} mit {}".format(results_dic[key][0].strip(), classifier_label, label_match))
+        results_dic[key].extend([image_classification.strip(), label_match])
     None

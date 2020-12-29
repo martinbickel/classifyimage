@@ -56,9 +56,9 @@ def get_pet_labels(image_dir):
                 pet_label += word + " "
 
         if filename not in results_dic:
-            results_dic[filename] = [pet_label]
+            results_dic[filename] = [pet_label.strip()]
         else:
-            results_dic[filename] = [pet_label]
+            results_dic[filename] = [pet_label.strip()]
             print("Warning: {} already exists in dictionary and was overwritten!".format(results_dic[filename]))
 
 
