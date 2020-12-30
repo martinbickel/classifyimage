@@ -88,10 +88,11 @@ def adjust_results4_isadog(results_dic, dogfile):
         else:
             index_3 = 0
 
-        if results_dic[result][1] in dognames_dic:
+        if results_dic[result][1].lower() in dognames_dic:
             index_4 = 1
         else:
             index_4 = 0
+
 
         results_dic[result].extend([index_3,index_4])
     None
