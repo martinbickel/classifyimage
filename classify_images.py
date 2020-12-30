@@ -81,6 +81,5 @@ def classify_images(images_dir, results_dic, model):
             label_match = 1
         else:
             label_match = 0
-        print("{} und {} mit {}".format(results_dic[key][0].strip(), classifier_label, label_match))
         results_dic[key].extend([image_classification.strip(), label_match])
     None
