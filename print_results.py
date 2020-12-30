@@ -70,14 +70,14 @@ def print_results(results_dic, results_stats_dic, model,
             print("{}: {}".format(stat, results_stats_dic[stat]))
     #print misclassification of incorrect Dogs
     if print_incorrect_dogs==True and ((results_stats_dic["n_correct_dogs"]+results_stats_dic["n_correct_notdogs"])!=results_stats_dic["n_images"]):
-        print("incorrect dogs:\n")
+        print("incorrect dogs:")
         for result in results_dic:
             if sum(results_dic[result][3:])==1:
-                print("{}, {}\n".format(results_dic[result][0],results_dic[result][1]))
+                print("pet image label: {}  classifier label: {}".format(results_dic[result][0],results_dic[result][1]))
     # print misclassification of incorrect breeds
     if print_incorrect_breed==True and results_stats_dic["n_correct_dogs"] != results_stats_dic["n_correct_breed"]:
-        print("incorrect dog breeds:\n")
+        print("incorrect dog breeds:")
         for result in results_dic:
             if sum(results_dic[result][3:])==2 and results_dic[result][2]==0:
-                print("{}, {}\n".format(results_dic[result][0],results_dic[result][1]))
+                print("pet image label: {}  classifier label: {}".format(results_dic[result][0],results_dic[result][1]))
     None
